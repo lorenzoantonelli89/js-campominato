@@ -11,23 +11,25 @@
 // con difficoltà 1 => tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
 
-var numMathRnd;
-var valueUtente;
+var result = document.getElementById('result');
+
+var numMathRnd = 100;
+var valueUtente = 84;
 
 var difficultBtn = document.getElementById('difficult');
 
-difficultBtn.addEventListener('click', function(){
-  var difficult = prompt('Scegli il lvl di difficoltà tra 0/1/2');
+difficultBtn.addEventListener('change', function(){
+  var difficult = document.getElementById('difficult').value;
 
-  if (difficult == 0) {
+  if (difficult == 1) {
      numMathRnd = 100;
      valueUtente = 84;
-  }else if (difficult == 1) {
+  }else if (difficult == 2) {
      numMathRnd = 80;
      valueUtente = 64;
-  }else {
-     numMathRnd = 50;
-     valueUtente = 34;
+  }else if (difficult == 3) {
+    numMathRnd = 50;
+    valueUtente = 34;
   }
 
 });
@@ -59,9 +61,11 @@ function numPlayer(){
     numUtente.push(numInsert);
 
     if (arrNumRnd.includes(numInsert)) {
+      result.innerHTML = 'Hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti';
       console.log('Hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti');
       break;
     }else if (numUtente.length == valueUtente) {
+      result.innerHTML = 'Hai vinto';
       console.log('Hai vinto');
     }
 
