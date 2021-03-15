@@ -34,5 +34,18 @@ for (var i = 0; i < 5; i++) {
     i--
   }else {
     numUtente.push(numInsert);
+
+    if (arrNumRnd.includes(numInsert)) {
+      console.log('hai perso');
+      break;
+    }else {
+      console.log('hai vinto');
+    }
   }
+}
+
+if (arrNumRnd.includes(numUtente)) {
+  console.log('hai perso');
+}else {
+  console.log('hai vinto');
 }
