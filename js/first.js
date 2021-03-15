@@ -15,13 +15,11 @@ var arrNumRnd = [];
 
 for (var i = 0; i < 8; i++) {
   var rnd = Math.floor(Math.random() * 8) + 1;
-  arrNumRnd.push(rnd);
   console.log(rnd);
-  if (i === arrNumRnd[arrNumRnd.length - 1]) {
-    var change = arrNumRnd.splice(-1, 1, Math.floor(Math.random() * 8) + 1);
-    // var rnd2 = Math.floor(Math.random() * 100) + 1;
-    arrNumRnd.push(change);
-    console.log(change);
+  if (arrNumRnd.includes(rnd)) {
+    i--
+  }else {
+    arrNumRnd.push(rnd);
   }
 }
 
