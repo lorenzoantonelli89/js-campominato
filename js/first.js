@@ -11,41 +11,50 @@
 // con difficoltà 1 => tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
 
-var arrNumRnd = [];
+function numPc(){
 
-for (var i = 0; i < 8; i++) {
-  var rnd = Math.floor(Math.random() * 13) + 1;
-  console.log(rnd);
-  if (arrNumRnd.includes(rnd)) {
-    i--
-  }else {
-    arrNumRnd.push(rnd);
+  arrNumRnd = [];
+
+  for (var i = 0; i < 8; i++) {
+    var rnd = Math.floor(Math.random() * 13) + 1;
+    console.log(rnd);
+    if (arrNumRnd.includes(rnd)) {
+      i--
+    }else {
+      arrNumRnd.push(rnd);
+    }
   }
+
+  console.log(arrNumRnd);
 }
 
-console.log(arrNumRnd);
 
-var numUtente = [];
+function numUtente(){
 
-for (var i = 0; i < 5; i++) {
-  var numInsert = parseInt(prompt('scrivi un numero'));
-  if (numUtente.includes(numInsert)) {
-    alert('hai inserito un numero doppio');
-    i--
-  }else {
-    numUtente.push(numInsert);
+  numUtente = [];
 
-    if (arrNumRnd.includes(numInsert)) {
-      console.log('hai perso');
-      break;
+  for (var i = 0; i < 5; i++) {
+    var numInsert = parseInt(prompt('scrivi un numero'));
+    if (numUtente.includes(numInsert)) {
+      alert('hai inserito un numero doppio');
+      i--
     }else {
-      console.log('hai vinto');
+      numUtente.push(numInsert);
+
+      if (arrNumRnd.includes(numInsert)) {
+        console.log('hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti');
+        break;
+      }else if (numUtente.length == 5) {
+        console.log('hai vinto');
+      }
     }
   }
 }
 
-if (arrNumRnd.includes(numUtente)) {
-  console.log('hai perso');
-}else {
-  console.log('hai vinto');
+
+function campominato(){
+  numPc();
+  numUtente();
 }
+
+campominato();
