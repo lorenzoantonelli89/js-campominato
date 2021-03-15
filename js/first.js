@@ -14,7 +14,7 @@
 var arrNumRnd = [];
 
 for (var i = 0; i < 8; i++) {
-  var rnd = Math.floor(Math.random() * 8) + 1;
+  var rnd = Math.floor(Math.random() * 13) + 1;
   console.log(rnd);
   if (arrNumRnd.includes(rnd)) {
     i--
@@ -24,3 +24,15 @@ for (var i = 0; i < 8; i++) {
 }
 
 console.log(arrNumRnd);
+
+var numUtente = [];
+
+for (var i = 0; i < 5; i++) {
+  var numInsert = parseInt(prompt('scrivi un numero'));
+  if (numUtente.includes(numInsert)) {
+    alert('hai inserito un numero doppio');
+    i--
+  }else {
+    numUtente.push(numInsert);
+  }
+}
