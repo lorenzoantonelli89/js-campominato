@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  height: 100vh;
+  background-color: lightblue;
+  display: flex;
+  text-align: center;
+}
+
+.row{
+  margin: auto;
+}
+
+#difficult, #play{
+  background-color: green;
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
