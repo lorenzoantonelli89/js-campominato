@@ -1,0 +1,122 @@
+/* regole generali */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cfcfcf;
+}
+
+
+/* regole header */
+
+header{
+  text-align: center;
+  margin: 10px 0;
+}
+
+header>h3{
+  margin-top: 10px;
+  color: #4f5459;
+}
+
+.container-difficulty{
+  margin: 10px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+.container-difficulty .difficulty {
+  text-align: center;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.container-difficulty .difficulty:hover {
+  color: blue;
+}
+
+.container-difficulty .difficulty.active_difficulty {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+/* regole container gioco top */
+.game {
+  text-align: center;
+}
+
+.game_style {
+  margin: 0 auto;
+  display: inline-block;
+  border-top: 5px solid #969696;
+  border-bottom: 5px solid #F0F0F0;
+  border-left: 5px solid #969696;
+  border-right: 5px solid #F0F0F0;
+  background-color: #CCCCCC;
+}
+
+.game_top {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.game_top .top_face {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  font-size: 30px;
+  color: yellow;
+  border-bottom: 5px solid #969696;
+  border-top: 5px solid #F0F0F0;
+  border-right: 5px solid #969696;
+  border-left: 5px solid #F0F0F0;
+}
+
+.game_top .top_face i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.game_top .top_face.pressed {
+  border-bottom: 2.5px solid #969696;
+  border-top: 5px solid #969696;
+  border-right: 2.5px solid #969696;
+  border-left: 5px solid #969696;
+}
+
+.game_top .count {
+  font-family: "VT323", monospace;
+  height: 50px;
+  line-height: 40px;
+  background-color: black;
+  color: red;
+  font-size: 50px;
+  padding: 5px;
+}
+
+/* regole tabella */
+.container-table{
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 25%;
+}
+
+table{
+  width: 100%;
+}
+
+.container-table tr{
+  height: 40px;
+}
+
+td{
+  border: 1px solid black;
+}
