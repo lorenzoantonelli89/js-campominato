@@ -11,77 +11,95 @@
 // con difficoltà 1 => tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
 
-var result = document.getElementById('result');
+// var result = document.getElementById('result');
+//
+// var numMathRnd = 100;
+// var valueUtente = 84;
+//
+// var difficultBtn = document.getElementById('difficult');
+//
+// difficultBtn.addEventListener('change', function(){
+//   var difficult = document.getElementById('difficult').value;
+//
+//   if (difficult == 1) {
+//      numMathRnd = 100;
+//      valueUtente = 84;
+//   }else if (difficult == 2) {
+//      numMathRnd = 80;
+//      valueUtente = 64;
+//   }else if (difficult == 3) {
+//     numMathRnd = 50;
+//     valueUtente = 34;
+//   }
+//
+// });
+//
+// function numPc(){
+//   arrNumRnd = [];
+//
+//   while (arrNumRnd.length < 16) {
+//     var rnd = Math.floor(Math.random() * numMathRnd) + 1;
+//     if (!arrNumRnd.includes(rnd)) {
+//       arrNumRnd.push(rnd);
+//     }
+//   }
+//
+//   console.log(arrNumRnd);
+// }
+//
+//
+// function numPlayer(){
+//
+//   numUtente = [];
+//
+//   while (numUtente.length < valueUtente) {
+//     var numInsert = parseInt(prompt('Scrivi un numero compreso tra 1 e ' + numMathRnd));
+//     if (numUtente.includes(numInsert)) {
+//       alert('Hai inserito un numero doppio');
+//       continue
+//     }
+//     numUtente.push(numInsert);
+//
+//     if (arrNumRnd.includes(numInsert)) {
+//       result.innerHTML = 'Hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti';
+//       console.log('Hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti');
+//       break;
+//     }else if (numUtente.length == valueUtente) {
+//       result.innerHTML = 'Hai vinto';
+//       console.log('Hai vinto');
+//     }
+//
+//   }
+// }
+//
+// function campominato(){
+//   numPc();
+//   numPlayer();
+// }
+//
+//
+// var playBtn = document.getElementById('play');
+//
+// playBtn.addEventListener('click', function(){
+//
+//   campominato();
+//
+// });
 
-var numMathRnd = 100;
-var valueUtente = 84;
+// var tdBtn = document.getElementById('test');
+//
+// tdBtn.addEventListener('click', function(){
+//   console.log('test');
+// });
 
-var difficultBtn = document.getElementById('difficult');
+// var tdBtn = document.getElementsByClassName("table-cell");
+//
+// tdBtn.addEventListener('click', function(){
+//   console.log('test');
+// });
 
-difficultBtn.addEventListener('change', function(){
-  var difficult = document.getElementById('difficult').value;
+var tdBtn = document.getElementsByTagName('td');
 
-  if (difficult == 1) {
-     numMathRnd = 100;
-     valueUtente = 84;
-  }else if (difficult == 2) {
-     numMathRnd = 80;
-     valueUtente = 64;
-  }else if (difficult == 3) {
-    numMathRnd = 50;
-    valueUtente = 34;
-  }
-
-});
-
-function numPc(){
-  arrNumRnd = [];
-
-  while (arrNumRnd.length < 16) {
-    var rnd = Math.floor(Math.random() * numMathRnd) + 1;
-    if (!arrNumRnd.includes(rnd)) {
-      arrNumRnd.push(rnd);
-    }
-  }
-
-  console.log(arrNumRnd);
-}
-
-
-function numPlayer(){
-
-  numUtente = [];
-
-  while (numUtente.length < valueUtente) {
-    var numInsert = parseInt(prompt('Scrivi un numero compreso tra 1 e ' + numMathRnd));
-    if (numUtente.includes(numInsert)) {
-      alert('Hai inserito un numero doppio');
-      continue
-    }
-    numUtente.push(numInsert);
-
-    if (arrNumRnd.includes(numInsert)) {
-      result.innerHTML = 'Hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti';
-      console.log('Hai perso ma hai totalizzato: ' + (numUtente.length - 1) + ' punti');
-      break;
-    }else if (numUtente.length == valueUtente) {
-      result.innerHTML = 'Hai vinto';
-      console.log('Hai vinto');
-    }
-
-  }
-}
-
-function campominato(){
-  numPc();
-  numPlayer();
-}
-
-
-var playBtn = document.getElementById('play');
-
-playBtn.addEventListener('click', function(){
-
-  campominato();
-
+tdBtn.addEventListener('click', function(){
+  console.log('test');
 });
