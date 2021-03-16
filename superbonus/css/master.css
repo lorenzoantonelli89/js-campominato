@@ -38,11 +38,6 @@ header>h3{
   color: blue;
 }
 
-.container-difficulty .difficulty.active_difficulty {
-  color: blue;
-  border-bottom: 1px solid blue;
-}
-
 /* regole container gioco top */
 .game {
   text-align: center;

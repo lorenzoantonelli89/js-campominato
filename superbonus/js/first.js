@@ -92,6 +92,44 @@
 //   console.log('test');
 // });
 
+var bomb = 15;
+
+function selectDifficult() {
+
+  var difficult = document.getElementsByClassName("difficulty");
+    for (var i = 0; i < difficult.length; i++) {
+
+      difficult[i].addEventListener('click', function(){
+        var clickedDifficult = this;
+        var clickedDifficultValue = clickedDifficult.dataset.value;
+        console.log(clickedDifficultValue);
+
+        if (clickedDifficultValue == 0) {
+          bomb = 15;
+        }else if (clickedDifficultValue == 1) {
+          bomb = 30;
+        }else if (clickedDifficultValue == 2) {
+          bomb = 50;
+        }
+
+      });
+    }
+}
+selectDifficult();
+
+
+
+function generaBomb() {
+  for (var i = 0; i < bomb; i++) {
+    var rnd = Math.floor(Math.random() * bomb) + 1;
+    console.log(rnd);
+  }
+}
+
+generaBomb();
+
+
+
 var tdBtn = document.getElementsByClassName("table-cell");
 
 
@@ -101,6 +139,8 @@ for (var i = 0; i < tdBtn.length; i++) {
     var clickedTd = this;
     var clickedTdValue = clickedTd.dataset.number;
     console.log(clickedTdValue);
+
+
   });
 
 }
