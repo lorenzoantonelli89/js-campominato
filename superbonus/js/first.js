@@ -92,14 +92,15 @@
 //   console.log('test');
 // });
 
-// var tdBtn = document.getElementsByClassName("table-cell");
-//
-// tdBtn.addEventListener('click', function(){
-//   console.log('test');
-// });
+var tdBtn = document.getElementsByClassName("table-cell");
 
-var tdBtn = document.getElementsByTagName('td');
 
-tdBtn.addEventListener('click', function(){
-  console.log('test');
-});
+for (var i = 0; i < tdBtn.length; i++) {
+  var elemTd = tdBtn[i];
+  elemTd.addEventListener('click', function(){
+    var clickedTd = this;
+    var clickedTdValue = clickedTd.dataset.number;
+    console.log(clickedTdValue);
+  });
+
+}
