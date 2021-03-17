@@ -92,7 +92,14 @@
 //   console.log('test');
 // });
 
-var bomb = 15;
+function generaBomb() {
+  for (var i = 0; i < bomb; i++) {
+    var rnd = Math.floor(Math.random() * bomb) + 1;
+    console.log(rnd);
+  }
+}
+
+var bomb = 0;
 
 function selectDifficult() {
 
@@ -112,21 +119,13 @@ function selectDifficult() {
           bomb = 50;
         }
 
+        generaBomb();
+
       });
     }
 }
 selectDifficult();
 
-
-
-function generaBomb() {
-  for (var i = 0; i < bomb; i++) {
-    var rnd = Math.floor(Math.random() * bomb) + 1;
-    console.log(rnd);
-  }
-}
-
-generaBomb();
 
 
 
@@ -144,3 +143,6 @@ for (var i = 0; i < tdBtn.length; i++) {
   });
 
 }
+
+// modificare al click
+// this.innerHTML = this.dataset.number;
