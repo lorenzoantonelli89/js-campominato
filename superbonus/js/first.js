@@ -4,8 +4,7 @@ function onClick(){
   var clickedTdValue = parseInt(clickedTd.dataset.number);
   var square = clickedTd.children[0];
   var bombFound = clickedTd.children[1];
-  console.log(clickedTdValue, bombRnd);
-  console.log(square);
+
   if (bombRnd.includes(clickedTdValue)) {
     square.style.display = "none";
     bombFound.style.display = "block";
@@ -14,7 +13,6 @@ function onClick(){
   }
 
   clickedTd.removeEventListener('click', onClick);
-  console.log(clickedTdValue);
 
 }
 
@@ -24,7 +22,6 @@ var tdBtn = document.getElementsByClassName("table-cell");
 for (var i = 0; i < tdBtn.length; i++) {
   var elemTd = tdBtn[i];
   elemTd.addEventListener('click', onClick);
-
 }
 
 var bombRnd = [];
@@ -36,34 +33,38 @@ function generaBomb() {
       bombRnd.push(rnd);
     }
 
-    console.log(rnd);
   }
 
 }
 
-var bomb = 15;
+var bomb = 0;
 
 function selectDifficult() {
+  var clickedDifficult = this;
+  var clickedDifficultValue = clickedDifficult.dataset.value;
 
-  var difficult = document.getElementsByClassName("difficulty");
-    for (var i = 0; i < difficult.length; i++) {
+  if (clickedDifficultValue == 0) {
+    bomb = 15;
+  }else if (clickedDifficultValue == 1) {
+    bomb = 30;
+  }else if (clickedDifficultValue == 2) {
+    bomb = 50;
+  }
 
-      difficult[i].addEventListener('click', function(){
-        var clickedDifficult = this;
-        var clickedDifficultValue = clickedDifficult.dataset.value;
-        console.log(clickedDifficultValue);
+  generaBomb();
 
-        if (clickedDifficultValue == 0) {
-          bomb = 15;
-        }else if (clickedDifficultValue == 1) {
-          bomb = 30;
-        }else if (clickedDifficultValue == 2) {
-          bomb = 50;
-        }
-
-        generaBomb();
-
-      });
-    }
 }
-selectDifficult();
+
+var difficult = document.getElementsByClassName("difficulty");
+  for (var i = 0; i < difficult.length; i++) {
+    difficult[i].addEventListener('click', selectDifficult);
+  }
+
+
+function refreshGame() {
+  location.reload();
+}
+
+var refreshBtn = document.getElementById('refresh');
+
+refreshBtn.addEventListener('click', refreshGame);

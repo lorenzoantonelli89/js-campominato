@@ -109,12 +109,18 @@ header>h3{
   border-collapse: collapse;
 }
 
+.container-table tbody{
+  width: 484px;
+  height: 484px;
+}
+
 .container-table tr{
   height: 47px;
+  width: 484px;
 }
 
 .container-table td{
-  width: calc(100% / 10);
+  width: 47px;
   border: 1px solid #9f9f9f;
   cursor: pointer;
   position: relative;
