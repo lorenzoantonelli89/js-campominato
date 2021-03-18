@@ -41,6 +41,7 @@ header>h3{
 /* regole container gioco top */
 .game {
   text-align: center;
+  position: relative;
 }
 
 .game_style {
@@ -134,13 +135,64 @@ header>h3{
   border-bottom: 5px solid #969696;
   border-left: 5px solid #F0F0F0;
   border-right: 5px solid #969696;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .fas.fa-bomb{
   font-size: 25px;
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#win{
+  padding: 20px;
+  background-color: yellow;
+  border-radius: 80px;
+  box-shadow: 0 0  20px 20px green;
+  font-size: 90px;
+  color: green;
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  z-index: 200;
+  display: none;
+}
+
+#lost{
+  padding: 20px;
+  background-color: yellow;
+  border-radius: 80px;
+  box-shadow: 0 0  20px 20px red;
+  font-size: 100px;
+  color: red;
+  position: absolute;
+  top: 40%;
+  left: 33%;
+  z-index: 200;
+  display: none;
+}
+
+#lost, #win{
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
 }
