@@ -10,17 +10,15 @@ function onClick(){
 
   var squareBtn = document.getElementsByClassName("square-click");
 
-  var test = [];
   for (var i = 0; i < squareBtn.length; i++) {
     var elemSquare = squareBtn[i];
-    test.push(elemSquare);
-    console.log(elemSquare);
+    if (bombRnd.includes(clickedTdValue)) {
+      elemSquare.style.opacity = "0";
+    }
   }
-
   if (bombRnd.includes(clickedTdValue)) {
     square.style.opacity = "0";
     bombFound.style.display = "block";
-    elemSquare.style.opacity = "0";
   }else {
     arrTd.push(clickedTd);
     square.style.opacity = "0";
