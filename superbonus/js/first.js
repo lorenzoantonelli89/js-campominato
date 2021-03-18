@@ -1,15 +1,23 @@
+var scorePlay = 1;
+
+var arrTd = [];
 
 function onClick(){
   var clickedTd = this;
   var clickedTdValue = parseInt(clickedTd.dataset.number);
   var square = clickedTd.children[0];
   var bombFound = clickedTd.children[1];
-
   if (bombRnd.includes(clickedTdValue)) {
     square.style.display = "none";
     bombFound.style.display = "block";
   }else {
+    arrTd.push(clickedTd);
     square.style.display = "none";
+    if (arrTd.length < 10) {
+      document.getElementById('score').innerHTML = '00' + scorePlay++;
+    }else {
+      document.getElementById('score').innerHTML = '0' + scorePlay++;
+    }
   }
 
   clickedTd.removeEventListener('click', onClick);
