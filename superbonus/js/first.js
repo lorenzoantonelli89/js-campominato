@@ -37,13 +37,6 @@ function onClick(){
 
 }
 
-var tdBtn = document.getElementsByClassName("table-cell");
-
-for (var i = 0; i < tdBtn.length; i++) {
-  var elemTd = tdBtn[i];
-  elemTd.addEventListener('click', onClick);
-}
-
 
 var bombRnd = [];
 
@@ -62,15 +55,7 @@ function generaBomb() {
 
 }
 
-var diffBtn = document.getElementsByClassName("difficulty");
-for (var i = 0; i < diffBtn.length; i++) {
-  diffBtn[i].addEventListener('click', function(){
-    this.style.color = "red";
-    this.style.color = "red";
-    this.style.color = "red";
-
-  });
-}
+var tdBtn = document.getElementsByClassName("table-cell");
 
 var bomb = 0;
 
@@ -80,14 +65,28 @@ function selectDifficult() {
 
   if (clickedDifficultValue == 0) {
     bomb = 12;
+    for (var i = 0; i < tdBtn.length; i++) {
+      var elemTd = tdBtn[i];
+      elemTd.addEventListener('click', onClick);
+    }
   }else if (clickedDifficultValue == 1) {
     bomb = 20;
+    for (var i = 0; i < tdBtn.length; i++) {
+      var elemTd = tdBtn[i];
+      elemTd.addEventListener('click', onClick);
+    }
   }else if (clickedDifficultValue == 2) {
     bomb = 30;
+    for (var i = 0; i < tdBtn.length; i++) {
+      var elemTd = tdBtn[i];
+      elemTd.addEventListener('click', onClick);
+    }
   }
 
   generaBomb();
 
+  this.style.color = "blue";
+  this.style.textDecoration = "underline";
 }
 
 var difficult = document.getElementsByClassName("difficulty");
