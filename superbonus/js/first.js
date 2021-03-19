@@ -62,6 +62,16 @@ function generaBomb() {
 
 }
 
+var diffBtn = document.getElementsByClassName("difficulty");
+for (var i = 0; i < diffBtn.length; i++) {
+  diffBtn[i].addEventListener('click', function(){
+    this.style.color = "red";
+    this.style.color = "red";
+    this.style.color = "red";
+
+  });
+}
+
 var bomb = 0;
 
 function selectDifficult() {
@@ -81,9 +91,10 @@ function selectDifficult() {
 }
 
 var difficult = document.getElementsByClassName("difficulty");
-  for (var i = 0; i < difficult.length; i++) {
-    difficult[i].addEventListener('click', selectDifficult)
-  }
+for (var i = 0; i < difficult.length; i++) {
+  difficult[i].addEventListener('click', selectDifficult);
+}
+
 
 function refreshGame() {
   location.reload();
